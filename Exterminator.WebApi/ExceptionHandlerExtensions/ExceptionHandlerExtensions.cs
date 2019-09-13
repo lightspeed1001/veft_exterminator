@@ -40,7 +40,8 @@ namespace Exterminator.WebApi.ExceptionHandlerExtensions
                             ExceptionModel model = new ExceptionModel
                                                     {
                                                         StatusCode = statusCode,
-                                                        ExceptionMessage = exception.Message
+                                                        ExceptionMessage = exception.Message,
+                                                        StackTrace = exception.StackTrace
                                                     };
                             
                             LogService log = new LogService(new LogRepository());

@@ -17,7 +17,7 @@ namespace Exterminator.WebApi.Controllers
         public IActionResult GetAllLogs()
         {
             // return Ok(_service.GetAllLogs());
-            return Ok();
+            return Ok(_service.GetAllLogs());
         }
     }
 }
