@@ -29,11 +29,11 @@ namespace Exterminator.WebApi.ExceptionHandlerExtensions
                             var statusCode = (int) HttpStatusCode.InternalServerError;
                             context.Response.ContentType = "application/json";
 
-                            if(exceptionHandlerFeature is ResourceNotFoundException)
+                            if(exception is ResourceNotFoundException)
                                 statusCode = (int) HttpStatusCode.NotFound;
-                            else if (exceptionHandlerFeature is ModelFormatException)
+                            else if (exception is ModelFormatException)
                                 statusCode = (int) HttpStatusCode.PreconditionFailed;
-                            else if (exceptionHandlerFeature is ArgumentOutOfRangeException)
+                            else if (exception is ArgumentOutOfRangeException)
                                 statusCode = (int) HttpStatusCode.BadRequest;
                             
 
