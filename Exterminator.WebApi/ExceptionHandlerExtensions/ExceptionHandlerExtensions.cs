@@ -43,7 +43,7 @@ namespace Exterminator.WebApi.ExceptionHandlerExtensions
                                                         ExceptionMessage = exception.Message,
                                                         StackTrace = exception.StackTrace
                                                     };
-                            
+                            context.Response.StatusCode = statusCode;
                             LogService log = new LogService(new LogRepository());
                             log.LogToDatabase(model);
                             await context.Response.WriteAsync(model.ToString());
